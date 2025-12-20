@@ -1,5 +1,5 @@
 def main():
-    print("Daily Policy Research Bot starting...")
+    print("✅ Bot started successfully")
 
 if __name__ == "__main__":
     main()
