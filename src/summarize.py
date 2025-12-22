@@ -2,7 +2,7 @@ from openai import OpenAI
 import os
 
 def test_openai_call():
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = OpenAI()
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
