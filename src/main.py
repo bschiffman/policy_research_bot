@@ -1,4 +1,5 @@
 from summarize import test_openai_call
+from fetch_sources import fetch_nber_papers
 
 def main():
     print("✅ Bot started successfully")
