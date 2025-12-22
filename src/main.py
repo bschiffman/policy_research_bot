@@ -1,18 +1,18 @@
+from fetch_sources import fetch_all_sources
 from summarize import test_openai_call
-from fetch_sources import fetch_nber_papers
 
 def main():
     print("✅ Bot started successfully")
 
-    items = fetch_nber_papers()
-    print(f"📄 Fetched {len(items)} NBER papers")
+    items = fetch_all_sources()
+    print(f"📄 Fetched {len(items)} papers")
 
     for item in items:
-        print(f"- {item['title']}")
+        print(f"[{item['topic']}] {item['title']}")
+        print(f"🔗 {item['link']}\n")
 
-    result = test_openai_call()
-    print("🤖 OpenAI response:")
-    print(result)
+    print("🤖 OpenAI test response:")
+    print(test_openai_call())
 
 if __name__ == "__main__":
     main()
