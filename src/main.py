@@ -2,7 +2,6 @@ from fetch_sources import fetch_all_sources
 from state import load_seen_items, save_seen_items
 from summarize import summarize_item
 from fetch_voxeu import fetch_voxeu_papers
-
 #from fetch_semantic_scholar import fetch_semantic_papers
 
 def main():
@@ -28,8 +27,11 @@ def main():
     if not new_items:
         print("ℹ️ No new research items today.")
         return
+    
+    to_summarize = new_items[:4]
+    print(f"📌 Summarizing {len(to_summarize)} items today (limit 4)")
 
-    for item in new_items:
+    for item in to_summarize:
         print(f"[{item['source']}] {item['title']}")
         print(f"✍️ {item.get('authors', 'Unknown authors')}")
         print(f"🔗 {item['link']}")
