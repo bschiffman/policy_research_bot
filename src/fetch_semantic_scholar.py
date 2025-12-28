@@ -24,6 +24,7 @@ def fetch_semantic_papers(query, days_back=7, limit=5):
             "abstract": p.get("abstract", ""),
             "source": "Semantic Scholar",
             "url": p.get("url"),
+            "link": p.get("url"),  # <--- add this line
             "year": p.get("year"),
         })
 

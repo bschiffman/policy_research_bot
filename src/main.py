@@ -35,7 +35,7 @@ def main():
         print(f"[{item['topic']}] {item['title']}")
         print(f"✍️ {item.get('authors', 'Unknown authors')}")
         print(f"🏷️ Source: {item.get('source', 'Unknown')}")
-        print(f"🔗 {item['link']}\n")
+        print(f"🔗 {item.get('link', item.get('url'))}")
 
         # Generate summary using OpenAI
         summary = summarize_item(item)
@@ -43,7 +43,7 @@ def main():
         print("-" * 60)
 
         # Mark item as seen
-        seen_items.add(item["link"])
+        seen_items.add(item.get('link', item.get('url')))
 
     # Persist updated state
     save_seen_items(seen_items)
