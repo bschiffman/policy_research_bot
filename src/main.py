@@ -13,7 +13,7 @@ def main():
     items = fetch_all_sources()
     print(f"📄 Fetched {len(items)} total items")
 
-    # 🔁 FALLBACK LOGIC (INSERT HERE)
+    # 🔁 FALLBACK LOGIC
     if len(items) == 0:
         print("⚠️ No items from primary sources — falling back to Semantic Scholar")
         items = fetch_semantic_papers(
