@@ -2,7 +2,7 @@ import feedparser
 
 VOXEU_RSS_URL = "https://voxeu.org/rss.xml"
 
-def fetch_voxeu_papers(limit=10):
+def fetch_voxeu_papers(limit=100):
     """
     Fetch latest VoxEU columns (opinion / policy commentaries).
     Returns a list of dicts compatible with main.py:
