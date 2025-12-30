@@ -35,8 +35,8 @@ def main():
         print(f"[{item['source']}] {item['title']}")
         print(f"✍️ {item.get('authors', 'Unknown authors')}")
         print(f"🔗 {item['link']}")
-        print("ℹ️ Note: This is a column / commentary, not a research paper\n")
-
+        if item["source"].lower().startswith("voxeu"):
+            print("📝 Note: This is commentary (policy column), not peer-reviewed research.")
         # Generate summary using OpenAI
         summary = summarize_item(item)
         print(summary)
