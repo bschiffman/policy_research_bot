@@ -1,26 +1,29 @@
 import feedparser
 
-VOXEU_RSS_URL = "https://voxeu.org/rss.xml"
+CEPR_FEEDS = {
+    "vox_content": "https://cepr.org/rss/vox-content",
+    "discussion_papers": "https://cepr.org/rss/discussion-paper",
+    "news": "https://cepr.org/rss/news"
+}
 
-def fetch_voxeu_papers(limit=100):
-    """
-    Fetch latest VoxEU columns (opinion / policy commentaries).
-    Returns a list of dicts compatible with main.py:
-    - title
-    - link
-    - authors
-    - source
-    - summary
-    """
-    feed = feedparser.parse(VOXEU_RSS_URL)
-    papers = []
+def fetch_voxeu_papers(limit=10):
+    items = []
 
-    for entry in feed.entries[:limit]:
-        papers.append({
-            "title": entry.title,
-            "link": entry.link,
-            "authors": entry.get("author", "Unknown"),
-            "source": "VoxEU (columns / policy commentary)",
-            "summary": entry.get("summary", ""),
-        })
-    return papers
+    for topic, url in CEPR_FEEDS.items():
+        feed = feedparser.parse(url)
+        print(f"RSS '{topic}' contains {len(feed.entries)} entries")  # debug
+
+        for entry in feed.entries:
+            item = {
+                "title": entry.title,
+                "link": entry.link,
+                "authors": entry.get("author", "Unknown"),
+                "source": f"CEPR ({topic})",
+            }
+            items.append(item)
+
+    # Sort by newest first if desired
+    items.sort(key=lambda x: x.get("published_parsed", None), reverse=True)
+
+    # Slice to limit
+    return items[:limit]

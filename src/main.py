@@ -23,7 +23,7 @@ def main():
     # 🔁 FALLBACK LOGIC
     if len(new_items) == 0:
         print("⚠️ No items from primary sources — falling back to VoxEU")
-        vox_items = fetch_voxeu_papers(limit=100)
+        vox_items = fetch_voxeu_papers(limit=10)
         print(f"📄 Fetched {len(vox_items)} VoxEU items")
 
         new_items = [
@@ -39,7 +39,7 @@ def main():
         print(f"[{item['source']}] {item['title']}")
         print(f"✍️ {item.get('authors', 'Unknown authors')}")
         print(f"🔗 {item['link']}")
-        if item["source"].lower().startswith("voxeu"):
+        if item["source"].startswith("CEPR (vox_content)"):
             print("📝 Note: This is commentary (policy column), not peer-reviewed research.")
         # Generate summary using OpenAI
         summary = summarize_item(item)
