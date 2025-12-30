@@ -23,8 +23,8 @@ def main():
 
     # 🔁 FALLBACK LOGIC
     if len(new_items) == 0:
-        print("⚠️ No items from primary sources — falling back to Semantic Scholar")
-        items = fetch_voxeu_papers(limit=10)
+        print("⚠️ No items from primary sources — falling back to VoxEU")
+        items = fetch_voxeu_papers(limit=100)
         print(f"📄 Fetched {len(items)} VoxEU items")
 
     #creating new items again with voxeu
