@@ -19,6 +19,8 @@ def fetch_one_from_feed(feed_url):
         "title": entry.title,
         "summary": entry.get("summary", ""),
         "link": entry.link,
+        "authors": entry.get("author", "Unknown"),
+        "source": "arXiv (preprint)"
     }
 
 def fetch_all_sources():
