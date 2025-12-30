@@ -20,13 +20,11 @@ def main():
 
     if not new_items:
         print("ℹ️ No new research items today.")
-
     # 🔁 FALLBACK LOGIC
-    # 🔁 FALLBACK LOGIC
-if len(new_items) == 0:
-    print("⚠️ No items from primary sources — falling back to VoxEU")
-    vox_items = fetch_voxeu_papers(limit=100)
-    print(f"📄 Fetched {len(vox_items)} VoxEU items")
+    if len(new_items) == 0:
+        print("⚠️ No items from primary sources — falling back to VoxEU")
+        vox_items = fetch_voxeu_papers(limit=100)
+        print(f"📄 Fetched {len(vox_items)} VoxEU items")
 
     new_items = [
         item for item in vox_items
