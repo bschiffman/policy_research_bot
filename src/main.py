@@ -26,7 +26,11 @@ def main():
         print("⚠️ No items from primary sources — falling back to Semantic Scholar")
         items = fetch_voxeu_papers(limit=10)
         print(f"📄 Fetched {len(items)} VoxEU items")
-    
+
+    #creating new items again with voxeu
+    new_items = [item for item in items if item["link"] not in seen_items]
+    print(f"🆕 {len(new_items)} new items")
+
     to_summarize = new_items[:4]
     print(f"📌 Summarizing {len(to_summarize)} items today (limit 4)")
 
