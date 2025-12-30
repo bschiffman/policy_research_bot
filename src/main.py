@@ -26,10 +26,10 @@ def main():
         vox_items = fetch_voxeu_papers(limit=100)
         print(f"📄 Fetched {len(vox_items)} VoxEU items")
 
-    new_items = [
-        item for item in vox_items
-        if item["link"] not in seen_items
-    ]
+        new_items = [
+            item for item in vox_items
+            if item["link"] not in seen_items
+        ]
 
     print(f"🆕 {len(new_items)} new VoxEU items")
     to_summarize = new_items[:4]
