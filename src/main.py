@@ -14,15 +14,15 @@ def main():
     items = fetch_all_sources()
     print(f"📄 Fetched {len(items)} total items")
 
-    # 🔁 FALLBACK LOGIC
-    if len(items) == 0:
-        print("⚠️ No items from primary sources — falling back to Semantic Scholar")
-        items = fetch_voxeu_papers(limit=10)
-        print(f"📄 Fetched {len(items)} VoxEU items")
-
     # Filter out items that have already been sent
     new_items = [item for item in items if item["link"] not in seen_items]
     print(f"🆕 {len(new_items)} new items")
+
+    # 🔁 FALLBACK LOGIC
+    if len(new_items) == 0:
+        print("⚠️ No items from primary sources — falling back to Semantic Scholar")
+        items = fetch_voxeu_papers(limit=10)
+        print(f"📄 Fetched {len(items)} VoxEU items")
 
     if not new_items:
         print("ℹ️ No new research items today.")
