@@ -22,8 +22,5 @@ def fetch_voxeu_papers(limit=10):
             }
             items.append(item)
 
-    # Sort by newest first if desired
-    items.sort(key=lambda x: x.get("published_parsed", None), reverse=True)
-
     # Slice to limit
     return items[:limit]
