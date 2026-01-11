@@ -25,6 +25,25 @@ poicy_reasearch_bot/
 ```
 
 ## Startup and Personalization Guide
+### Quickstart 
+``` bash
+cd /path/to/your/folder/policy_research_bot
+pip install -r requirements.txt
+```
+### Necessities:
+You will need to have API access to a LLM provider, or an LLM you can call locally. I suggest OpenAI for ease of use, since you can insert your API key as an environment variable without changing the source code. Ensure to keep your personal keys safe, for example as a secret environment variable in your GitHub repo. See this discussion for some guidance. [How to pass secrets variables to your private github packages?](https://github.com/orgs/community/discussions/64585)
+
+### Customization options:
+- **Prompt Customization:** both the system prompt and summary prompts can be customized to fit your goals and instruct the ChatBot with regards to how you want information to be summarized for your needs.
+- **Source Customization:** The sources chosen for this project fit my personal goals of
+  1) Easy access via RSS
+  2) Academic or other well respected sources
+  3) Topic and interests (economics/econometrics, AI/ML, public policy)
+
+  Feel free to pursue other sources.
+- **LLM Model:** This project uses GPT-4.0-mini for fast, low-cost summarization. You may want to use a newer model for deeper or more modern insight.
+
+# Ownership and Creative details
 
 ### Author
 **Ben Schiffman, MPP**  
