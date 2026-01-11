@@ -4,6 +4,24 @@ This is a Bot that will send me a short list of policy/econ articles daily that 
 # Overview
 
 ## Repo Strucutre
+```text
+poicy_reasearch_bot/
+|-- README.md                     # Project Overview and Setup
+|-- requirements.txt              # Python dependencies
+|-- .github/
+  | -- workflows/
+    |-- daily.yml                 # Instructions for GitHub actions (weekday runs 7:30 am eastern)   
+|-- data/
+  |-- seen_items.json             # Tracker of articles previously included
+|-- src
+  |-- main.py                     # Orchestrates fetch -> summary -> output and tracking
+  |-- fetch_sources.py            # fetches primary sources (arXiv)
+  |-- fetch_voxeu.py              # fetches backup sources (VoxEu)
+  |-- state.py                    # writes seen items into tracker
+  |-- prompts.py                  # Holds system and item summary prompts
+
+
+```
 
 ## Startup and Personalization Guide
 
