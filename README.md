@@ -27,6 +27,6 @@ poicy_reasearch_bot/
 ## Startup and Personalization Guide
 
 ### Author
-Ben Schiffman, MPP
-Interested in AI agents and applied systems, public policy, and economics. 
+**Ben Schiffman, MPP**  
+AI agents and applied systems • public policy • economics  
 LinkedIn: https://www.linkedin.com/in/ben-schiffman/
