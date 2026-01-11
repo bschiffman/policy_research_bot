@@ -2,6 +2,7 @@
 This is a Bot that will send me a short list of policy/econ articles daily that have been filtered and summarized by ChatGPT for prioritization. As of today, the output lives in the GitHub actions logs - so anyone can fork and get this running in just a few minutes!
 
 # Overview
+This project runs on weekdays via GitHub actions. It uses RSS feeds to source academic articles and policy related content from [arXiv](https://arxiv.org/) and [VoxEU](https://cepr.org/voxeu). Each source's article is checked against a persistent "seen items" tracker to prevent repetition, and a subset of new articles are selected and summarized via an OpenAI API call. 
 
 ## Repo Strucutre
 ```text
