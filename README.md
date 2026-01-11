@@ -30,3 +30,12 @@ poicy_reasearch_bot/
 **Ben Schiffman, MPP**  
 AI agents and applied systems • public policy • economics  
 LinkedIn: https://www.linkedin.com/in/ben-schiffman/
+
+## License
+
+This project is licensed under the Creative Commons Attribution–NonCommercial 4.0 International License.
+
+You are free to use, modify, and share this project for non-commercial purposes.
+Commercial use, including paid products or services built on this codebase,
+requires explicit permission from the author.
+
