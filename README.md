@@ -33,9 +33,7 @@ LinkedIn: https://www.linkedin.com/in/ben-schiffman/
 
 ## License
 
-This project is licensed under the Creative Commons Attribution–NonCommercial 4.0 International License.
+This project is licensed under the [MIT License](LICENSE).  
 
-You are free to use, modify, and share this project for non-commercial purposes.
-Commercial use, including paid products or services built on this codebase,
-requires explicit permission from the author.
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this software, provided that the original copyright notice and this permission notice are included in all copies or substantial portions of the software.
 
